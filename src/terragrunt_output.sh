@@ -3,7 +3,7 @@
 function terragruntOutput {
   # Gather the output of `terragrunt output`.
   echo "output: info: gathering all the outputs for the Terragrunt configuration in ${tfWorkingDir}"
-  outputOutput=$(${tfBinary} output -json ${*} 2>&1)
+  outputOutput=$(${tfBinary} run-all output -json ${*} 2>&1)
   outputExitCode=${?}
 
   # Exit code of 0 indicates success. Print the output and exit.
